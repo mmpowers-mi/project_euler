@@ -1,0 +1,25 @@
+# Project Euler
+# Problem 6
+# Created by Marcus Powers, June 13th, 2015
+
+# main() definition--------------------------------------------------------
+def main():
+    # Constants
+    MAX = 100
+
+    # Loop through and brute-force calculation (because it's so small)
+    sum_of_squares = 0
+    sum_reg = 0
+    for x in range(1, MAX + 1):
+        sum_of_squares += x * x
+        sum_reg += x
+    square_of_sum = sum_reg * sum_reg
+    final = square_of_sum - sum_of_squares
+
+    # Output final result
+    print final
+
+
+# Run program--------------------------------------------------------------
+if __name__ == "__main__":
+    main()

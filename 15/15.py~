@@ -1,0 +1,29 @@
+# Project Euler
+# Problem 15
+# Created by Marcus Powers, June 12th, 2015
+
+# main() definition--------------------------------------------------------
+def main():
+    # Constants
+    SIZE = 3
+
+    # Run recursive pathfinder
+    final = rec(0, 0, SIZE)
+
+    # Print final result
+    print final
+        
+
+# rec(x, y, s) definition---------------------------------------------------------
+def rec(x, y, s):
+    if x == s:
+        return 1
+    elif y == s:
+        return 1
+    else:
+        return rec(x + 1, y, s) + rec(x, y + 1, s)
+
+
+# Run program--------------------------------------------------------------
+if __name__ == "__main__":
+    main()

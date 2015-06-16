@@ -1,0 +1,46 @@
+# Project Euler
+# Problem 14
+# Created by Marcus Powers, June 12th, 2015
+
+# main() definition--------------------------------------------------------
+def main():
+    # Constants
+    SIZE = 10
+
+    # Data Structures
+    dists = [0 for _ in range(SIZE)]
+    max = 0
+
+    # Loop through and calculate results
+    for i in range(SIZE):
+        print "calculating", i
+        seen = [(i, 0)]
+        v = i
+        dist = 1
+        # Calculate the distance
+        while v != 1:
+            print "v is now", v
+            # If we see a value we also need to calculate, cache it
+            if v < SIZE:
+                if dists[v]:
+                    dist += dists[v]
+                    break
+                else:
+                    seen.append((v, dist))
+            if v % 2 == 0:
+                v /= 2
+            else:
+                v = (3 * v) + 1
+        # Finally, set the new value(s)
+        for (v, d) in seen:
+            dists[v] = dist - d
+
+    print dists
+
+    # Print final result
+    #print final
+
+
+# Run program--------------------------------------------------------------
+if __name__ == "__main__":
+    main()

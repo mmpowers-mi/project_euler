@@ -1,0 +1,44 @@
+# Project Euler
+# Problem 12
+# Created by Marcus Powers, June 14th, 2015
+
+# main() definition-------------------------------------------------------
+def main():
+    # Constants
+    MINDIVS = 500
+
+    # Calculation
+    factors = 0
+    i = 0
+    while factors <= 500:
+        i += 1
+        factors = len(factor(trinum(i)))
+
+    # Print result
+    print trinum(i)
+    
+        
+# trinum(n) definition----------------------------------------------------
+def trinum(n):
+    # Return the nth triangle number
+    return (n * n + n) / 2
+
+
+# factor(n) definition----------------------------------------------------
+def factor(n):
+    # Return a list of all factors of n
+    factors = []
+    i = 1
+    while True:
+        if i > n / i:
+            break
+        if not n % i:
+            factors.append(i)
+            factors.append(n / i)
+        i += 1
+    return factors
+
+
+# Run program-------------------------------------------------------------
+if __name__ == "__main__":
+    main()

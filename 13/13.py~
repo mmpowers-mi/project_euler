@@ -1,0 +1,35 @@
+# Project Euler
+# Problem 13
+# Created by Marcus Powers, June 12th, 2015
+
+# main() definition--------------------------------------------------------
+def main():
+    # Constants
+    FILENAME = "13.txt"
+
+    # Read in numbers
+    instr = FILENAME
+    fi = open(instr, "r")
+    contents = fi.read()
+    fi.close()
+    nums = map(int, raw_input().split())
+
+    # Add nums together
+
+    # Print final result
+    print
+    print " Distribution Results"
+    print "-----------------------------"
+    for key, value in dist.iteritems():
+        print key, "articles:", value
+    print "-----------------------------"
+    print
+    print "Failures:"
+    print "----------"
+    for fail in failures:
+        print "Page", fail
+    print
+        
+# Run program-----------------------------------------------------------
+if __name__ == "__main__":
+    main()
